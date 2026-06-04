@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang='zh-TW'>
+<head>
+    <meta charset='UTF-8'>
+    <title>MIXXtopia - 應援地圖</title>
+    <style>
+        body { 
+            background: linear-gradient(180deg, #001f3f 0%, #003366 50%, #001f3f 100%); 
+            color: #E0FFFF; 
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 20px; 
+            overflow-x: hidden;
+        }
+        .container { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(15px); 
+            border: 2px solid rgba(127, 255, 212, 0.3); 
+            border-radius: 30px; 
+            padding: 40px; 
+            box-shadow: 0 10px 50px rgba(0,0,0,0.6); 
+            width: 80%; 
+            max-width: 1400px;
+            text-align: center; 
+            position: relative;
+            z-index: 1;
+        }
+        h1 { 
+            color: #7FDBFF; 
+            text-shadow: 0 0 20px #7FDBFF; 
+            font-size: 3em; 
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .subtitle { color:#7FFFD4; font-size: 1.4em; font-weight: 300; margin-bottom: 20px; }
+        .whale-icon { font-size: 1.2em; }
+        .map-wrapper { 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 8px solid #001f3f; 
+            background: white; 
+            margin-top: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .whale { 
+            position: absolute; 
+            font-size: 50px; 
+            opacity: 0.3; 
+            z-index: 0; 
+            animation: swim 25s infinite linear;
+        }
+        @keyframes swim {
+            0% { left: -100px; transform: scaleX(1); }
+            45% { transform: scaleX(1); }
+            50% { left: 110%; transform: scaleX(-1); }
+            95% { transform: scaleX(-1); }
+            100% { left: -100px; transform: scaleX(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class='whale' style='top: 15%;'>🐋</div>
+    <div class='whale' style='top: 70%; animation-duration: 40s; animation-delay: -10s;'>🐳</div>
+
+    <div class='container'>
+        <h1>MIXXtopia</h1>
+        <p class='subtitle'>다가올 내 모든 time 답은 너야</p>
+        
+        <div class='map-wrapper'>
+            <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_ef996221b5a6b56dc7eb71c6540dc3e8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+
+            &lt;style&gt;html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &lt;/style&gt;
+
+            &lt;style&gt;#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            &lt;/style&gt;
+
+            &lt;script&gt;
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            &lt;/script&gt;
+
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_ef996221b5a6b56dc7eb71c6540dc3e8&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_ef996221b5a6b56dc7eb71c6540dc3e8 = L.map(
+                &quot;map_ef996221b5a6b56dc7eb71c6540dc3e8&quot;,
+                {
+                    center: [23.8, 121.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 7,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c3e274524dd3fa3c1000cb9ecf4b0394 = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_c3e274524dd3fa3c1000cb9ecf4b0394.addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var marker_69d7443857f5b512b165ce4a9a56cae8 = L.marker(
+                [25.0331, 121.5606],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_d218b07e8c81b66f0e2f432833e8f931 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+            marker_69d7443857f5b512b165ce4a9a56cae8.bindTooltip(
+                `&lt;div&gt;
+                     TICC 台北國際會議中心
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_69d7443857f5b512b165ce4a9a56cae8.setIcon(icon_d218b07e8c81b66f0e2f432833e8f931);
+            
+    
+            var marker_aee8e6846716ccf8a4e6b6ebef53399d = L.marker(
+                [24.995, 121.3213],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_e7ae585957359a302efb5b6c76ae75bf = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+            marker_aee8e6846716ccf8a4e6b6ebef53399d.bindTooltip(
+                `&lt;div&gt;
+                     桃園巨蛋
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_aee8e6846716ccf8a4e6b6ebef53399d.setIcon(icon_e7ae585957359a302efb5b6c76ae75bf);
+            
+    
+            var marker_65dc8b99ef4643f8c8a98772599a564f = L.marker(
+                [25.0345, 121.3916],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_9e309c38a3065e9d2c7158c3d6127408 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+            marker_65dc8b99ef4643f8c8a98772599a564f.bindTooltip(
+                `&lt;div&gt;
+                     國立體育大學體育場
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_65dc8b99ef4643f8c8a98772599a564f.setIcon(icon_9e309c38a3065e9d2c7158c3d6127408);
+            
+    
+            var marker_65c10a98cf9e75d3b044b9e3bf8d89fb = L.marker(
+                [22.705, 120.2947],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_16649352bd1e474318a5e778cfd46377 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+            marker_65c10a98cf9e75d3b044b9e3bf8d89fb.bindTooltip(
+                `&lt;div&gt;
+                     高雄世運主場館
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_65c10a98cf9e75d3b044b9e3bf8d89fb.setIcon(icon_16649352bd1e474318a5e778cfd46377);
+            
+    
+            var marker_404e713c0e7f5eaad889e1502115469f = L.marker(
+                [22.6698, 120.3023],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_8365b9f2760d733b7a58226a84ace014 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;red&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_b7fae888a6c5205e50dbd86c9aa5869a = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_6526ca1380aa58e0a1a0071860dec05f = $(`&lt;div id=&quot;html_6526ca1380aa58e0a1a0071860dec05f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;2026/07/11開唱&lt;/div&gt;`)[0];
+                popup_b7fae888a6c5205e50dbd86c9aa5869a.setContent(html_6526ca1380aa58e0a1a0071860dec05f);
+            
+        
+
+        marker_404e713c0e7f5eaad889e1502115469f.bindPopup(popup_b7fae888a6c5205e50dbd86c9aa5869a)
+        ;
+
+        
+    
+    
+            marker_404e713c0e7f5eaad889e1502115469f.bindTooltip(
+                `&lt;div&gt;
+                     高雄巨蛋
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_404e713c0e7f5eaad889e1502115469f.setIcon(icon_8365b9f2760d733b7a58226a84ace014);
+            
+    
+            var marker_034f89dc9e377376f0a367f1a66288b5 = L.marker(
+                [25.0441, 121.5065],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_9af490067f003781cbc5c14aedf1ceb3 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_b68300719d421ac9dd4ab00c75fb3a0f = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_fefffc6db26baac48e9cbec6d701126a = $(`&lt;div id=&quot;html_fefffc6db26baac48e9cbec6d701126a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;K-MONSTAR 台北店&lt;/div&gt;`)[0];
+                popup_b68300719d421ac9dd4ab00c75fb3a0f.setContent(html_fefffc6db26baac48e9cbec6d701126a);
+            
+        
+
+        marker_034f89dc9e377376f0a367f1a66288b5.bindPopup(popup_b68300719d421ac9dd4ab00c75fb3a0f)
+        ;
+
+        
+    
+    
+            marker_034f89dc9e377376f0a367f1a66288b5.bindTooltip(
+                `&lt;div&gt;
+                     K-MONSTAR 台北店
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_034f89dc9e377376f0a367f1a66288b5.setIcon(icon_9af490067f003781cbc5c14aedf1ceb3);
+            
+    
+            var marker_c8e723a816f111841e3cfae3d20e2c7d = L.marker(
+                [24.1511, 120.6638],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_6c23b01262be28a2854b29cf53419fc7 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_62999f1c929434345f5d2382b6579eb2 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_5d5877e0001f1c9f6d37a952e6119c67 = $(`&lt;div id=&quot;html_5d5877e0001f1c9f6d37a952e6119c67&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;K-MONSTAR 台中店&lt;/div&gt;`)[0];
+                popup_62999f1c929434345f5d2382b6579eb2.setContent(html_5d5877e0001f1c9f6d37a952e6119c67);
+            
+        
+
+        marker_c8e723a816f111841e3cfae3d20e2c7d.bindPopup(popup_62999f1c929434345f5d2382b6579eb2)
+        ;
+
+        
+    
+    
+            marker_c8e723a816f111841e3cfae3d20e2c7d.bindTooltip(
+                `&lt;div&gt;
+                     K-MONSTAR 台中店
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_c8e723a816f111841e3cfae3d20e2c7d.setIcon(icon_6c23b01262be28a2854b29cf53419fc7);
+            
+    
+            var marker_766870be12248dcb3a2fd983d7fc0a73 = L.marker(
+                [25.0425, 121.5078],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_c02a821f66fcdcf698c56d9926715f6a = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_401b1e0ef3a4665a1577e3ad2c353445 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_4ed42402cd734f3d9887c7c286201c9c = $(`&lt;div id=&quot;html_4ed42402cd734f3d9887c7c286201c9c&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;微樂客 西門店&lt;/div&gt;`)[0];
+                popup_401b1e0ef3a4665a1577e3ad2c353445.setContent(html_4ed42402cd734f3d9887c7c286201c9c);
+            
+        
+
+        marker_766870be12248dcb3a2fd983d7fc0a73.bindPopup(popup_401b1e0ef3a4665a1577e3ad2c353445)
+        ;
+
+        
+    
+    
+            marker_766870be12248dcb3a2fd983d7fc0a73.bindTooltip(
+                `&lt;div&gt;
+                     微樂客 台北西門店
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_766870be12248dcb3a2fd983d7fc0a73.setIcon(icon_c02a821f66fcdcf698c56d9926715f6a);
+            
+    
+            var marker_9d25e69586c4b243182003ee4dc07d52 = L.marker(
+                [24.1485, 120.6861],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_d53eff0d66dcdeb0661141c31a9ac2b9 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_7d38c041944b07449a85336447afcded = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_170e36bdf2ac81768e039682283528c2 = $(`&lt;div id=&quot;html_170e36bdf2ac81768e039682283528c2&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;微樂客 台中店&lt;/div&gt;`)[0];
+                popup_7d38c041944b07449a85336447afcded.setContent(html_170e36bdf2ac81768e039682283528c2);
+            
+        
+
+        marker_9d25e69586c4b243182003ee4dc07d52.bindPopup(popup_7d38c041944b07449a85336447afcded)
+        ;
+
+        
+    
+    
+            marker_9d25e69586c4b243182003ee4dc07d52.bindTooltip(
+                `&lt;div&gt;
+                     微樂客 台中一中店
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_9d25e69586c4b243182003ee4dc07d52.setIcon(icon_d53eff0d66dcdeb0661141c31a9ac2b9);
+            
+    
+            var marker_275453154f313f12c6fd3e115b054428 = L.marker(
+                [22.6223, 120.3015],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_5b9fb04f8752065069dfda6fea3995a5 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;orange&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_90f9f99b2d72d70a370459d9fb49ed89 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_9b5ad6849225dabc9f5d9f1352f3c753 = $(`&lt;div id=&quot;html_9b5ad6849225dabc9f5d9f1352f3c753&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;微樂客 高雄店&lt;/div&gt;`)[0];
+                popup_90f9f99b2d72d70a370459d9fb49ed89.setContent(html_9b5ad6849225dabc9f5d9f1352f3c753);
+            
+        
+
+        marker_275453154f313f12c6fd3e115b054428.bindPopup(popup_90f9f99b2d72d70a370459d9fb49ed89)
+        ;
+
+        
+    
+    
+            marker_275453154f313f12c6fd3e115b054428.bindTooltip(
+                `&lt;div&gt;
+                     微樂客 高雄新堀江店
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_275453154f313f12c6fd3e115b054428.setIcon(icon_5b9fb04f8752065069dfda6fea3995a5);
+            
+    
+            var marker_2684cfb1c74def1cfd6a36b55e24b644 = L.marker(
+                [25.0792, 121.5794],
+                {
+}
+            ).addTo(map_ef996221b5a6b56dc7eb71c6540dc3e8);
+        
+    
+            var icon_be34b186fe543847f9eea24b5da7ee61 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;green&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;info-sign&quot;,
+  &quot;prefix&quot;: &quot;glyphicon&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_d62b616a9cdeac2b5d4507b07f97e6b7 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_5817327df2618bee6694c7d1f4ee0d9b = $(`&lt;div id=&quot;html_5817327df2618bee6694c7d1f4ee0d9b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;NMIX Lily生日應援&lt;/div&gt;`)[0];
+                popup_d62b616a9cdeac2b5d4507b07f97e6b7.setContent(html_5817327df2618bee6694c7d1f4ee0d9b);
+            
+        
+
+        marker_2684cfb1c74def1cfd6a36b55e24b644.bindPopup(popup_d62b616a9cdeac2b5d4507b07f97e6b7)
+        ;
+
+        
+    
+    
+            marker_2684cfb1c74def1cfd6a36b55e24b644.bindTooltip(
+                `&lt;div&gt;
+                     NATIVO精品咖啡
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_2684cfb1c74def1cfd6a36b55e24b644.setIcon(icon_be34b186fe543847f9eea24b5da7ee61);
+            
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+        </div>
+        
+        <p style='margin-top:25px; font-size:0.9em; color: #7FDBFF; opacity:0.8;'>
+            探索深海中的每一顆星光 | Powered by NSWER Energy
+        </p>
+    </div>
+</body>
+</html>
